@@ -1,0 +1,13 @@
+:root{
+    ---sidebar-background:#d8d8d8;
+}
+.sidebar
+{
+    background-color: var(---sidebar-background);
+    width:20%;
+}
+.notes-icon
+{
+    width:20px;
+    height: 20px;
+}
