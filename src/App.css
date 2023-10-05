@@ -10,4 +10,15 @@
 {
     width:20px;
     height: 20px;
+    overflow: scroll;
+}
+.deleteIcon
+{
+    width: 20px;
+    height: 20px
+}
+.editIcon
+{
+    width: 20px;
+    height: 20px
 }

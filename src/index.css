@@ -98,5 +98,19 @@ code {
   display:flex;
   flex-direction:column;
   margin-bottom:10px;
-  height: 30%;
+  height: 60%;
+  overflow: scroll;
+}
+
+.note_container{
+  display:flex;
+  padding:10px 0px;
+  justify-content: space-between;
+  align-items: center;
+}
+.note_container_content{
+  display:flex;
+}
+.note_container_actions{
+  display:flex;
 }

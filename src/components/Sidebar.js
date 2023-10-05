@@ -3,6 +3,7 @@ import LogoutIcon from "./svg/LogoutIcon";
 import EditIcon from "./svg/EditIcon";
 import {useState} from 'react';
 import uuid from 'react-uuid';
+import Note from "./Note";
 export default function Sidebar()
 {
     const [notes,setNotes]=useState([]);
@@ -32,11 +33,12 @@ export default function Sidebar()
                     <div className="folder"><NotesIcon/><p className="notes_title">Quran detailss</p></div>
 
             </div>
+            <h3 className="notes_title">
+                    Notes
+            </h3>
             <div className="sidebar_notes_container">
                {notes.map((note,index)=>
-                <p key={index}>{note.title},
-                {note.id}</p>
-                
+                <Note title={note.title} index={index}/>
                )}
             </div>
         </div>
