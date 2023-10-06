@@ -1,7 +1,7 @@
 import DeleteIcon from "./svg/DeleteIcon"
 import EditIcon from "./svg/EditIcon"
 import NotesIcon from "./svg/NotesIcon"
-export default function Note({title,index})
+export default function Note({note,index,deleteFunc})
 {
     
     
@@ -9,11 +9,11 @@ export default function Note({title,index})
         <div className="note_container"   key={index}>
             <div className="note_container_content">
                 <NotesIcon/>
-                <p className="note_container_title">{title}</p>
+                <p className="note_container_title">{note.title}</p>
             </div>
             <div className="note_container_actions">
                 <EditIcon/>
-                <DeleteIcon/>
+                <button onClick={()=>deleteFunc(note.id)}><DeleteIcon /></button>
             </div>
           
         </div>

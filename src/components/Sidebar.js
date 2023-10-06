@@ -17,6 +17,10 @@ export default function Sidebar()
         }
         setNotes(prevNotes=>[note,...prevNotes]);
     }
+    const deleteNote=(idtoBeDeleted)=>
+    {
+        setNotes(notes.filter(note=>note.id!==idtoBeDeleted));
+    }
     return(
         <div className="sideBar">
             <div className="sideBar_top_container">
@@ -38,7 +42,11 @@ export default function Sidebar()
             </h3>
             <div className="sidebar_notes_container">
                {notes.map((note,index)=>
-                <Note title={note.title} index={index}/>
+                <Note 
+                    note={note} 
+                    index={index} 
+                    deleteFunc={deleteNote}
+                    />
                )}
             </div>
         </div>
