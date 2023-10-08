@@ -24,6 +24,7 @@ export default function Sidebar()
     return(
         <div className="sideBar">
             <div className="sideBar_top_container">
+            <div className="sidebar_top_container_profile">MK</div>
                 <p className="user_name">Muzammil</p>
                 <button className="LogoutBtn"><LogoutIcon/></button>
             </div>
