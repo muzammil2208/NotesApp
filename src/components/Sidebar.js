@@ -4,9 +4,13 @@ import EditIcon from "./svg/EditIcon";
 import {useState} from 'react';
 import uuid from 'react-uuid';
 import Note from "./Note";
-export default function Sidebar()
+export default function Sidebar({selectNote})
 {
+    //states to be mantained
+    const [activenote,setActiveNote]=useState([]);
     const [notes,setNotes]=useState([]);
+
+    //functions to implment functionalities
     const addNotes=()=>{
         const note={
             id:uuid(),
@@ -17,6 +21,13 @@ export default function Sidebar()
         }
         setNotes(prevNotes=>[note,...prevNotes]);
     }
+    
+    const setNote=(activeNote)=>{
+        setActiveNote(notes.find((note)=>activeNote.id===note.id));
+        selectNote(activenote);
+    }
+
+
     const deleteNote=(idtoBeDeleted)=>
     {
         setNotes(notes.filter(note=>note.id!==idtoBeDeleted));
@@ -45,8 +56,10 @@ export default function Sidebar()
                {notes.map((note,index)=>
                 <Note 
                     note={note} 
-                    index={index} 
+                    key={index} 
                     deleteFunc={deleteNote}
+                    setNotesFunc={setNote}
+
                     />
                )}
             </div>

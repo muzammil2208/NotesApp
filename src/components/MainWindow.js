@@ -1,9 +1,10 @@
-export default function MainWindow()
+export default function MainWindow({note})
 {
+    
     return(
         <div className="main_window">
-            <div className="main_window_title">Title of the notes</div>
-            <div className="main_window_body">body of the notes</div>
+            <input className="main_window_title" type="text"  value={note.title || 'undefined value'} ></input>
+            <textarea className="main_window_body" value={note.body||''}></textarea>
             <div className="main_window_folder">folder association</div>
             <button className="main_window_savebtn">save</button>
         </div>
