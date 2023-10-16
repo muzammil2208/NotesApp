@@ -3,8 +3,9 @@ import LogoutIcon from "./svg/LogoutIcon";
 
 
 import Note from "./Note";
-export default function Sidebar({notes,addNoteFunc,setActiveNote,deleteNote,})
+export default function Sidebar({notes,addNoteFunc,setActiveNote,deleteNote,activeNote})
 {
+    
     return(
         <div className="sideBar">
             <div className="sideBar_top_container">
@@ -24,6 +25,7 @@ export default function Sidebar({notes,addNoteFunc,setActiveNote,deleteNote,})
                     addNoteFunc={addNoteFunc}
                     setActiveNote={setActiveNote}
                     deleteNote={deleteNote}
+                    activeNote={activeNote}
                     />
                )}
             </div>

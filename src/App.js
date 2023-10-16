@@ -14,13 +14,12 @@ export default function App()
             title:"Unified title",
             body:"type something here",
             lastModefied:(Date.now()/1000),
-            folder:""
+            folder:"",
         }
         setNotes(prevNotes=>[note,...prevNotes]);
     }
-    const setNote=(activeNote)=>{
-        setActiveNote(notes.find((note)=>activeNote.id===note.id));
-        setNote(activeNote);
+    const ActiveNoteSet=(idtobeSelected)=>{
+        setActiveNote(notes.find(note=>note.id===idtobeSelected))
     }
     const deleteNote=(idtoBeDeleted)=>
     {
@@ -31,8 +30,9 @@ export default function App()
             <Sidebar 
                 notes={notes}
                 addNoteFunc={addNotes}
-                setActiveNote={setNote}
+                setActiveNote={ActiveNoteSet}
                 deleteNote={deleteNote}
+                activeNote={activeNote}
             />
             <MainWindow activeNote={activeNote}/>
         </div>
